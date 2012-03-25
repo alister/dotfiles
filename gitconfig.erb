@@ -1,20 +1,44 @@
 [user]
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+[github]
+	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+[core]
+	excludesfile = <%= ENV['HOME'] %>/.gitignore
+	editor = <%= ENV['EDITOR'] %>
+	autocrlf = input
 [alias]
 	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	df = diff
+	dfs = diff --staged
+	unstage = reset HEAD
+	head = !"git log -n1"
+	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 [color]
 	diff = auto
 	status = auto
 	branch = auto
-[core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = joe
-	autocrlf = input
 [apply]
 	whitespace = nowarn
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[github]
-	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+[color]
+	ui = auto
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "branch"]
+	current = yellow reverse
+	local = yellow bold
+	remote = green bold
+	plain = red bold
+[color "status"]
+	added = yellow
+	changed = green bold
+	untracked = blue bold
