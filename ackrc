@@ -1,0 +1,33 @@
+# http://github.com/petdance/ack 
+# http://betterthangrep.com/
+
+# only saerch with case sensitivity if there is mixed case 
+--smart-case
+
+--pager="less -R"
+--color
+
+# follow symlinks
+--follow
+
+--type-set=puppet=.pp
+--type-set=plaintext=.markdown,.md,.mkd,.mkdn,.rst,.rdoc,.texttile,.txt
+--type-set=csv=.txt,.csv,.tsv
+--type-set=gettext=.pot,.po
+--type-add=css=.sass,.less,.scss
+--type-add=js=.js.erb,.json
+--type-add=ruby=.rake,.builder
+
+# types to ignore by default
+--nogettext
+
+# supported in ack v1.9.3_02 and above only
+--ignore-dir=library/Zend
+
+--ignore-dir=doc
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=build
+--ignore-dir=vendor
+--ignore-dir=images
+--ignore-dir=generated
