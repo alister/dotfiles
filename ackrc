@@ -4,7 +4,7 @@
 # only saerch with case sensitivity if there is mixed case 
 --smart-case
 
---pager="less -R"
+#--pager="less -R"
 --color
 
 # follow symlinks
