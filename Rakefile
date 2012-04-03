@@ -6,7 +6,15 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE].include? file
-    
+
+    # install from the repo
+    unless Dir.exist?(File.expand_path("~/.oh-my-zsh"))
+      puts "Installing oh-my-zsh..."
+      `git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh`
+      # .zshrc is provided by the dotfile/zshrc 
+      # @todo "chsh /bin/zsh" ?
+    end
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"
@@ -47,4 +55,16 @@ def link_file(file)
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
+end
+
+desc "@todo AB. Upgrade the dot files into user's home directory"
+task :upgrade do
+
+    if Dir.exist?(File.expand_path("~/.oh-my-zsh"))
+      puts "Upgrade oh-my-zsh..."
+      `git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh`
+    end
+
+    # @todo upgrade dotfiles?
+
 end
