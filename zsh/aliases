@@ -36,3 +36,6 @@ alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG
 
 # commands starting with % for pasting from web
 alias %=' '
+
+# others
+ack="ack-grep "
