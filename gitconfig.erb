@@ -6,7 +6,7 @@
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = <%= ENV['EDITOR'] %>
+	editor = <%= ENV['EDITOR'] ||= 'joe' %>
 	autocrlf = input
 [alias]
 	co = checkout
