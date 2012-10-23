@@ -29,7 +29,8 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent)
+plugins=(git ssh-agent bundler rake composer ruby command-not-found rvm )
+# other potential plugins:       screen cap extract github rails 
 
 . ~/.zsh/config
 . ~/.zsh/aliases
@@ -47,3 +48,6 @@ export PATH=/home/alister/bin:/home/alister/.bin:$PATH
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
