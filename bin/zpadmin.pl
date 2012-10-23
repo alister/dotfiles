@@ -41,7 +41,7 @@ sub log_event {
 
 sub get_zp_list {
 # zpool list -H -o name
-      my $pool_names = `zpool list -H -o name`;
+      my $pool_names = `/sbin/zpool list -H -o name`;
       if ($pool_names eq "no pools available\n") {
             return $pool_names;
       }
@@ -52,7 +52,7 @@ sub get_zp_list {
 sub get_zp_health {
 # zpool list -H -o health $pool_name
       my $pool_name = shift;
-      my $result = `zpool list -H -o health $pool_name`;
+      my $result = `/sbin/zpool list -H -o health $pool_name`;
       chomp $result;
       return $result;
 }
@@ -66,7 +66,7 @@ sub get_zp_errors {
 sub scrub_pool {
 # zpool scrub $pool_name
       my $pool_name = shift;
-      system("zpool scrub $pool_name") == 0 or
+      system("/sbin/zpool scrub $pool_name") == 0 or
             die "zpool scrub $pool_name failed: $?";
       my $result = $? >> 8;
 
@@ -128,7 +128,7 @@ sub zpcheck {
       foreach my $pool (@zpools) {
             my $health = get_zp_health($pool);
             if ( $health eq "ONLINE" ) {
-                  print "zpool $pool status is $health, ok.\n" if(defined ($verbose));
+                  print "/sbin/zpool $pool status is $health, ok.\n" if(defined ($verbose));
                   #log_event("[STATUS] zpool $pool status is $health, ok.");
 		 		if(defined($scrub)) {
                         print "Starting scrub of pool $pool..." if(defined ($verbose));
