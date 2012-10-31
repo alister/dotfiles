@@ -29,8 +29,7 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent rvm ruby cap bundler command-not-found composer encode64 extract gem git github heroku rails3 rake)
-
+plugins=(git ssh-agent rvm ruby cap bundler command-not-found encode64 extract gem git github heroku rails3 rake)
 
 . ~/.zsh/config
 . ~/.zsh/aliases
