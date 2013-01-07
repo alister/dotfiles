@@ -31,6 +31,9 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ssh-agent rvm ruby cap bundler command-not-found encode64 extract gem git github heroku rails3 rake)
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
