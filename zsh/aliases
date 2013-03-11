@@ -10,9 +10,15 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
+function g {
+    if [[ $# > 0 ]]; then
+        git $@
+    else
+        git status --short --branch
+    fi
+}
 alias st='git status '
 alias gti='git '
-alias g='git '
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
