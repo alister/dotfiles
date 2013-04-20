@@ -44,6 +44,6 @@ alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG
 alias %=' '
 
 # others
-alias ack="ack-grep "
+#alias ack="ack-grep "
 alias be="bundle exec "
 alias ber="bundle exec rake "
