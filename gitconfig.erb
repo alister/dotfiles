@@ -18,7 +18,14 @@
 	unstage = reset HEAD
 	head = !"git log -n1"
 	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
-        pr = pull --rebase
+	pr = pull --rebase
+	standup = log ––since yesterday ––author alister
+	ready = rebase -i @{u}
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+	ours   = "!f() { git checkout --ours $@ && git add \"$@\"; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add \"$@\"; }; f"
 [color]
 	diff = auto
 	status = auto
