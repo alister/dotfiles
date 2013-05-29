@@ -6,6 +6,12 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gentoo"
+DISABLE_AUTO_UPDATE="false"
+DISABLE_LS_COLORS="false"
+
+#. ~/.zsh/config
+#. ~/.zsh/aliases
+#. ~/.zsh/completion
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -24,32 +30,29 @@ ZSH_THEME="gentoo"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent rvm ruby cap bundler command-not-found encode64 extract gem git github heroku rails3 rake)
-
+plugins=(alister git ssh-agent rvm ruby cap bundler command-not-found encode64 extract gem git github heroku rails3 rake)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
 
-. ~/.zsh/config
-. ~/.zsh/aliases
-. ~/.zsh/completion
-
-
-source $ZSH/oh-my-zsh.sh
-
-# use .localrc for settings specific to one system
-[[ -f ~/.localrc ]] && . ~/.localrc
-
-
 # Customize to your needs...
-export PATH=/home/alister/bin:/home/alister/.bin:$PATH
+export PATH="/home/alister/bin:/home/alister/.bin:$PATH"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
+export EDITOR='joe'
+
+source $ZSH/oh-my-zsh.sh
+
+
+# use .localrc for settings specific to one system
+[[ -f ~/.localrc ]] && . ~/.localrc
+
+## for Homebrew installed rbenv
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#@todo add rvm?
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
