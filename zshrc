@@ -32,7 +32,7 @@ DISABLE_LS_COLORS="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(alister git ssh-agent rvm ruby cap bundler command-not-found encode64 extract gem git github heroku rails3 rake)
+plugins=(alister ab-composer git ssh-agent rvm ruby capistrano bundler command-not-found encode64 extract gem git github)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
 
