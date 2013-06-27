@@ -1,7 +1,7 @@
-# http://github.com/petdance/ack 
+# http://github.com/petdance/ack
 # http://betterthangrep.com/
 
-# only saerch with case sensitivity if there is mixed case 
+# only search with case sensitivity if there is mixed case
 --smart-case
 
 #--pager="less -R"
@@ -31,3 +31,7 @@
 --ignore-dir=vendor
 --ignore-dir=images
 --ignore-dir=generated
+--ignore-dir=.rsync_cache
+
+--ignore-file=match:.phar
+--ignore-file=ext:sublime-workspace
