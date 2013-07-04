@@ -25,6 +25,8 @@
 	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 	ours   = "!f() { git checkout --ours $@ && git add \"$@\"; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add \"$@\"; }; f"
+	pushnotes = !sh -c 'git push $1 refs/notes/*' -
+	fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
 [color]
 	diff = auto
 	status = auto
