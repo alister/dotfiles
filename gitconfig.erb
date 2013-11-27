@@ -7,26 +7,40 @@
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = <%= ENV['EDITOR'] ||= 'joe' %>
 	autocrlf = input
+
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces as an error.
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
 [alias]
-	co = checkout
-	st = status
-	ci = commit
-	br = branch
-	df = diff
-	dfs = diff --staged
-	unstage = reset HEAD
-	head = !"git log -n1"
-	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
-	pr = pull --rebase
-	standup = log ––since yesterday ––author alister
-	ready = rebase -i @{u}
+    br = branch
+    ci = commit
+    cloner = clone --recursive
+    co = checkout
+    df = diff --patch-with-stat
+    dfs = diff --staged --patch-with-stat
+    head = !"git log -n1"
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
+    pr = pull --rebase
+    ready = rebase -i @{u}
+    s = status -s
+    st = status -sb
+    standup = log ––since yesterday ––author alister
+    unstage = reset HEAD
+
+    # Show verbose output about tags, branches or remotes
+    branches = branch -a
+    remotes = remote -v
+    tags = tag -l
+
 	assume   = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 	ours   = "!f() { git checkout --ours $@ && git add \"$@\"; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add \"$@\"; }; f"
-	pushnotes = !sh -c 'git push $1 refs/notes/*' -
-	fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
+	pushnotes = !sh -c 'git push $1 "refs/notes/*"' -
+	fetchnotes = !sh -c 'git fetch $1 "refs/notes/*:refs/notes/*"' -
 [color]
 	diff = auto
 	status = auto

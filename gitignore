@@ -4,3 +4,15 @@
 .*.swp
 *.sublime-project
 *.sublime-workspace
+
+## Some more from https://github.com/mathiasbynens/dotfiles/blob/master/.gitignore
+# Compiled Python files
+*.pyc
+# Folder view configuration files
+Desktop.ini
+# Thumbnail cache files
+._*
+Thumbs.db
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes

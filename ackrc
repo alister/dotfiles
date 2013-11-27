@@ -32,6 +32,8 @@
 --ignore-dir=images
 --ignore-dir=generated
 --ignore-dir=.rsync_cache
+--ignore-dir=cache
+--ignore-dir=sessions
 
 --ignore-file=match:.phar
 --ignore-file=ext:sublime-workspace

@@ -18,7 +18,7 @@ DISABLE_LS_COLORS="false"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -32,7 +32,7 @@ DISABLE_LS_COLORS="false"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(alister composer git ssh-agent rvm ruby capistrano bundler command-not-found encode64 extract gem git github)
+plugins=(alister git ssh-agent rvm ruby capistrano bundler command-not-found gem autoenv git git-extras github golang tmux)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
 
@@ -54,5 +54,7 @@ source $ZSH/oh-my-zsh.sh
 #if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #@todo add rvm?
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+echo 'source ~/.autoenv/activate.sh'
