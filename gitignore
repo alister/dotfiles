@@ -16,3 +16,8 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+
+# Should be using the *.dist files
+behat.yml
+phpunit.xml
