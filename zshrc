@@ -43,6 +43,11 @@ export PATH="/home/alister/bin:/home/alister/.bin:$PATH"
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 export EDITOR='joe'
+# http://blog.tersmitten.nl/how-to-enable-syntax-highlighting-in-less.html
+#  -- warning, 'lesspipe' will interfere with source-highlight
+# sudo apt-get install source-highlight
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 
 source $ZSH/oh-my-zsh.sh
 
