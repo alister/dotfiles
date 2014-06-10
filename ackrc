@@ -28,6 +28,7 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=build
+--ignore-dir=builds
 --ignore-dir=vendor
 --ignore-dir=images
 --ignore-dir=generated
