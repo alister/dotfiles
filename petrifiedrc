@@ -3,7 +3,7 @@
 # 
 #  TODO: Setup a cronjob as well:
 #     # in: /etc/cron.d/petrified
-#     */5 * * * * root /home/alister/.bin/petrified
+#     */5 * * * * root /home/alister/.bin/petrified -c /home/alister/.dotfiles/petrifiedrc
 #
 #  sudo chmod 755 /etc/cron.d/petrified
 #
@@ -28,7 +28,7 @@
 # after the '...update.php?' part and put here.
 #
 # Example: DDNS_KEY=9C4yjq3kaekkYNbYsKRqcosTmouMYbfVMLkJtR==
-DDNS_KEY=VEBkOE42MzFVMVVBQVN0alpvOEFBQUFsOjc4NTI0Mzk=
+DDNS_KEY=bzlkMzgzY3FKVnI5ckljTWlmaGo6Nzg1MjQzOQ==
 
 # Which URL to use to get an IP - the expectation is output from this
 # host in plain text, just the IP - no parsing will be done. The
@@ -60,9 +60,9 @@ DDNS_CHECK="http://echoip.com"
 
 # How to log - multiple supported {0,1}
 #
-#USE_JOURNAL=1
+USE_JOURNAL=0
 USE_SYSLOG=1
-#USE_STDOUT=0
+USE_STDOUT=0
 USE_LOGFILE=1
 
 # If USE_LOGFILE is 1, where to log {<string>}
@@ -77,4 +77,4 @@ PET_PID=/run/petrified.pid
 # Save the IP from our last check {0,1}, {<string>}
 #
 USE_LIP=1
-PET_LIP=/var/cache/petrified/lastip.dat
+PET_LIP=/var/cache/lastip.dat
