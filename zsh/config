@@ -1,0 +1,6 @@
+# from http://webdevstudios.com/2015/02/10/a-beginners-guide-to-the-best-command-line-tools/
+export HISTSIZE=32768;
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
+
