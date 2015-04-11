@@ -37,7 +37,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
 
 # Customize to your needs...
-export PATH="/home/alister/bin:/home/alister/.bin:$PATH"
+export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:$PATH"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
