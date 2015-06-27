@@ -34,10 +34,10 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(alister git ssh-agent autoenv bundler capistrano command-not-found common-aliases docker gem git-extras github golang rake-fast redis ruby rvm symfony2 systemadmin tmux wd )
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github
+zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github id_rsa.toptal.pub.
 
 # Customize to your needs...
-export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:$PATH"
+export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:/home/alister/.npm-global/bin:$PATH"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
