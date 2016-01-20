@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(alister git ssh-agent autoenv bundler capistrano command-not-found common-aliases docker gem git-extras github golang rake-fast redis ruby rvm symfony2 systemadmin tmux wd )
+plugins=(alister autoenv bundler capistrano command-not-found common-aliases docker gem git git-extras github golang rake-fast redis ruby rvm ssh-agent symfony2 systemadmin tmux wd )
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github id_rsa.toptal.pub.
 
