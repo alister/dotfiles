@@ -16,6 +16,7 @@
 [alias]
     br = branch
     ci = commit
+    amend = commit --amend
     cloner = clone --recursive
     co = checkout
     df = diff --patch-with-stat --word-diff
@@ -23,6 +24,9 @@
     head = !"git log -n1"
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
+
+    # Fully commits log with statistic
+  	ll = log --stat --abbrev-commit
     pr = pull --rebase
     ready = rebase -i @{u}
     s = status -s

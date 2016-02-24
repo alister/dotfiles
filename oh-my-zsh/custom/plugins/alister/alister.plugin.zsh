@@ -14,6 +14,10 @@ alias st='git status'
 alias gd='git diff'
 #alias tlog='tail -f log/development.log'
 
+# from https://github.com/denysdovhan/dotfiles/
+# https://github.com/denysdovhan/dotfiles/blob/3d860e9c59f03d408463b3fba33c73397a9037f3/zsh/aliases.zsh
+alias myip="curl -s https://4.ifcfg.me/"
+
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
 export PS1="\w$ "
