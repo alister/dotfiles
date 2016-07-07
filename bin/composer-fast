@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# composer without xdebug
+# From: http://stackoverflow.com/a/31083865/6216
+
+options=$(ls -1 /usr/lib/php5/20131226 | \
+
+    grep --invert-match xdebug| \
+
+    # remove problematic extensions
+    egrep --invert-match 'mysql|wddx|pgsql|opcache'| \
+
+    sed --expression 's/\(.*\)/ --define extension=\1/'| \
+
+    # join everything together back in one big line
+    tr --delete '\n'
+)
+
+# build the final command line
+php -d memory_limit=2G --no-php-ini $options /usr/local/bin/composer $*
