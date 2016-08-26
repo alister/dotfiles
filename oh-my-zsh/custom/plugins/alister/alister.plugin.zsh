@@ -27,3 +27,8 @@ export EDITOR="joe"
 #function duf {
 #    du -k "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
 #}
+
+# http://fahdshariff.blogspot.co.uk/2011/04/add-colour-to-ant-output.html
+# Add Colour to Ant Output
+# You can add pretty colours to your ant output really easily by simply setting the following in your profile:
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
