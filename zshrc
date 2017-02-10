@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(alister autoenv bundler capistrano command-not-found common-aliases docker gem git git-extras github golang rake-fast redis ruby rvm ssh-agent symfony2 systemadmin tmux wd )
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent id_rsa id_rsa2 id_github topbit.id_rsa
+zstyle :omz:plugins:ssh-agent id_rsa id_rsa.201702 id_rsa2 id_github topbit.id_rsa
 
 # Customize to your needs...
 export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:/home/alister/.npm-global/bin:$PATH"

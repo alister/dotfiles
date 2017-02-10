@@ -25,6 +25,8 @@
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
     pr = pull --rebase
+    pl = pull --rebase
+    ready = rebase -i @{u}
     s = status -s
     st = status -sb
     unstage = reset HEAD
