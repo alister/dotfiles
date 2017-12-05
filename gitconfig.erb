@@ -31,8 +31,8 @@
     st = status -sb
     unstage = reset HEAD
 
-    # Show verbose output about tags, branches or remotes
-    branches = branch -a
+    # Show verbose output about tags, branches or remotes, with summary commit
+    branches = branch -a -v
     remotes = remote -v
     tags = tag -l
 
@@ -57,6 +57,14 @@
     rebc   = rebase --continue
     rebt   = rebase --abort
     rebs   = rebase --skip
+
+    ## From https://wynnnetherland.com/journal/extending-the-command-line/
+    # List files known to Git
+    ls = ls-files
+    # Get short SHA-1 for object
+    hash = rev-parse --short HEAD
+    # Show the log with stats, but without merges
+    lc = log ORIG_HEAD.. --stat --no-merges
 
 [color]
     ui = auto
@@ -83,6 +91,11 @@
     untracked = blue bold
 [push]
     default = simple
-# https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67#.iloud2jeo
 [rerere]
+    # https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67#.iloud2jeo
     enabled = true
+[diff]
+	# Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
+	mnemonicprefix = true
+	# Allow git diff to do basic rename and copy detection:
+	renames = copies
