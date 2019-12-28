@@ -32,10 +32,10 @@ CASE_SENSITIVE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(alister autoenv bundler capistrano command-not-found common-aliases docker gem git git-extras github rake-fast redis ruby rvm ssh-agent symfony2 systemadmin tmux wd zsh-syntax-highlighting)
+plugins=(alister autoenv bundler capistrano command-not-found common-aliases docker gem git git-extras github rake-fast redis ruby rvm ssh-agent symfony symfony2 systemadmin tmux wd zsh-syntax-highlighting)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent id_rsa id_rsa.201702 
-#id_rsa2 id_github topbit.id_rsa
+zstyle :omz:plugins:ssh-agent id_rsa.201702 a10y_rsa
+#id_rsa2 id_github topbit.id_rsa id_rsa
 
 # Customize to your needs...
 export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:/home/alister/.npm-global/bin:$PATH"
