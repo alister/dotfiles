@@ -32,3 +32,5 @@ export EDITOR="joe"
 # Add Colour to Ant Output
 # You can add pretty colours to your ant output really easily by simply setting the following in your profile:
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+
+alias phpqa='docker run --init -it --rm -v $(pwd):/project -v $(pwd)/tmp-phpqa:/tmp -w /project alisterbulman/ci-php:php7.3'

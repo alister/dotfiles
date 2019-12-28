@@ -36,7 +36,7 @@ DDNS_KEY=UVozUm1PNXVTOFd0SVpFOXg3cjVqampZOjc4NTI0Mzk=
 # icanhazip service returns the IPv4 and IPv6 nice and clean.
 #
 # IPv4 icanhazip (http://major.io/icanhazip-com-faq/)
-DDNS_CHECK="https://api.ipify.org/"
+DDNS_CHECK="https://icanhazip.com/"
 #
 # IPv6 icanhazip (http://major.io/icanhazip-com-faq/)
 #DDNS_CHECK="http://6.icanhazip.com"

@@ -24,11 +24,15 @@
 # supported in ack v1.9.3_02 and above only
 --ignore-dir=library/Zend
 
+--ignore-dir=app/cache/
+--ignore-dir=app/logs/
+--ignore-dir=var
 --ignore-dir=doc
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=build
 --ignore-dir=builds
+--ignore-dir=node_modules
 --ignore-dir=vendor
 --ignore-dir=images
 --ignore-dir=generated
