@@ -30,6 +30,7 @@
     s = status -s
     st = status -sb
     unstage = reset HEAD
+    parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
 
     # Show verbose output about tags, branches or remotes, with summary commit
     branches = branch -a -v
@@ -99,7 +100,8 @@
     # https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67#.iloud2jeo
     enabled = true
 [diff]
-	# Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
-	mnemonicprefix = true
-	# Allow git diff to do basic rename and copy detection:
-	renames = copies
+    # Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
+    mnemonicprefix = true
+    # Allow git diff to do basic rename and copy detection:
+    renames = copies
+    noprefix = true
