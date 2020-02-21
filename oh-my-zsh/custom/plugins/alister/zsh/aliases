@@ -47,3 +47,13 @@ alias %=' '
 #alias ack="ack-grep "
 alias be="bundle exec "
 alias ber="bundle exec rake "
+
+# https://blog.petdance.com/2020/02/03/handy-collection-of-shell-aliases/
+## Show processes that use the most memory.
+alias memusage='ps -o rss,command -waxc | sort -n'
+## Show my running processes.
+alias paga='ps -u "$USER" f --header -o pid,ppid,start_time,%cpu,rssize=Resident,vsize=Virtual,cmd'
+## Dump HTTP headers
+alias headerdump='curl -D- -o/dev/null'
+#
+# Also see: https://blog.petdance.com/2019/10/02/bash-color-prompt-hostname/
