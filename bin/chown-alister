@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xargs --no-run-if-empty sudo chown alister:

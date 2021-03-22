@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find . -not -user $(whoami) | grep -v vendor | grep -v var | grep -v build | grep -v tmp | grep -v .php_cs.cache | grep -v ./.phpunit.result.cache/
+#| xargs --no-run-if-empty sudo chown alister:

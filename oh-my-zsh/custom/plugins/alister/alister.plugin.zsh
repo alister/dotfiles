@@ -2,9 +2,9 @@ c() { cd ~/repo/$1; }
 _c() { _files -W ~/repo -/; }
 compdef _c c
 
-h() { cd ~/$1; }
-_h() { _files -W ~/ -/; }
-compdef _h h
+#h() { cd ~/$1; }
+#_h() { _files -W ~/ -/; }
+#compdef _h h
 
 ### autocorrect is more annoying than helpful
 ##unsetopt correct_all
@@ -13,6 +13,11 @@ compdef _h h
 alias st='git status'
 alias gd='git diff'
 #alias tlog='tail -f log/development.log'
+
+# For working in Docker-compose 
+alias dcecon='docker-compose exec php bin/console '
+alias dcecom='docker-compose exec php composer '
+
 
 # from https://github.com/denysdovhan/dotfiles/
 # https://github.com/denysdovhan/dotfiles/blob/3d860e9c59f03d408463b3fba33c73397a9037f3/zsh/aliases.zsh

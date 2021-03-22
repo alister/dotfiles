@@ -5,6 +5,8 @@
 *.sublime-project
 *.sublime-workspace
 .idea
+# used by docker::jakzal/phpqa
+tmp-phpqa/
 
 ## Some more from https://github.com/mathiasbynens/dotfiles/blob/master/.gitignore
 # Compiled Python files
@@ -17,7 +19,6 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-
 
 # Should be using the *.dist files
 behat.yml
