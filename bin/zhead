@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# from: http://lptms.u-psud.fr/wiki/index.php/Working_with_compressed_files
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# based on zless
+
+PATH=${GZIP_BINDIR-'/bin'}:$PATH
+
+version="zhead 0.1
+Copyright (C) 2007, Free Software Foundation, Inc. <http://fsf.org/>
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Guillaume Roux."
+
+usage="Usage: $0 [OPTIONS]... [FILES]...
+
+Same as the 'head' command, but operate on the uncompressed contents of any compressed FILEs.
+Options are the same as for 'head'."
+
+case $1 in
+--help)    exec echo "$usage";;
+-h)        exec echo "$usage";;
+--version) exec echo "$version";;
+esac
+
+options=""
+count=0
+for i in $@; do
+str="$i"
+if test -f $i && [ ${str:(-3)} = ".gz" ]; then
+    files[++count]=$str
+else
+    if [ ${str:0:1} = "-" ] && [ $str != "-v" ] && [ $str != "--verbose" ]; then
+	options=$options"$i "
+    elif [ $str != "-v" ] && [ $str != "--verbose" ]; then
+        echo -ne "***Warning: $i is neither a regular zip file or a regular option***\n\n"
+    fi
+fi
+done
+
+if [ $count -gt 0 ]; then
+    if [ $count -eq 1 ]; then
+        exec gzip -cd ${files[1]} | head $options
+    else
+        for j in `seq 1 $count`; do
+            echo "==>"${files[j]}"<=="
+            exec gzip -cd ${files[j]} | head $options
+        done
+    fi
+else
+    echo -ne "***Warning: no regular zip files given***\n\n"
+    exec echo "$usage"
+fi

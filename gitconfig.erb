@@ -24,7 +24,7 @@
     head = !"git log -n1"
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
-    pr = pull --rebase
+    # pr = pull --rebase    -- Checks out a pull request locally from https://github.com/tj/git-extras
     pl = pull --rebase
     ready = rebase -i @{u}
     s = status -s
@@ -74,8 +74,6 @@
     branch = auto
 [apply]
     whitespace = nowarn
-[format]
-    pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [color "diff"]
     meta = blue bold
     frag = magenta bold
@@ -90,6 +88,11 @@
     added = yellow
     changed = green bold
     untracked = blue bold
+[fetch]
+    # Any git fetch or git pull will automatically prune.
+    prune = true
+[format]
+    pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [push]
     default = simple
 [pull]
