@@ -22,9 +22,14 @@
     df = diff --patch-with-stat --word-diff --find-renames
     dfs = diff --staged --patch-with-stat --word-diff --find-renames
     head = !"git log -n1"
-    l = log --pretty=oneline -n 20 --graph --abbrev-commit
-    lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
-    # pr = pull --rebase    -- Checks out a pull request locally from https://github.com/tj/git-extras
+    l =   "log       --graph --pretty=oneline -n 20 --abbrev-commit"
+    lg =  "log       --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
+    lgg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%Cred%cn%Cgreen:%cr)%Creset' --abbrev-commit --date=relative"
+    # Fully commits log with statistic
+    ll = "log --stat --abbrev-commit"
+    # Show the log with stats, but without merges
+    lc = log ORIG_HEAD.. --stat --no-merges
+
     pl = pull --rebase
     ready = rebase -i @{u}
     s = status -s
@@ -37,10 +42,7 @@
     remotes = remote -v
     tags = tag -l
 
-    # Fully commits log with statistic
-    ll = log --stat --abbrev-commit
     #up = "!git remote update -p; git merge --ff-only @{u}"
-    ready = rebase -i @{u}
     standup = log ––since yesterday ––author alister
 
     assume   = update-index --assume-unchanged
@@ -64,8 +66,6 @@
     ls = ls-files
     # Get short SHA-1 for object
     hash = rev-parse --short HEAD
-    # Show the log with stats, but without merges
-    lc = log ORIG_HEAD.. --stat --no-merges
 
 [color]
     ui = auto
