@@ -39,3 +39,11 @@ export EDITOR="joe"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
 alias phpqa='docker run --init -it --rm -v $(pwd):/project -v $(pwd)/tmp-phpqa:/tmp -w /project alisterbulman/ci-php:php7.3'
+
+alias -g J="| jq '.' -C | less -S"
+
+#alias -L 'G' 'GV' 'H' 'M'
+alias -g G=' | grep -iaE'
+alias -g GV=' | grep -ivaE' # negative grep
+alias -g H=' | head '
+alias -g M=' | less '
