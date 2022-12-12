@@ -30,6 +30,9 @@
     # Show the log with stats, but without merges
     lc = log ORIG_HEAD.. --stat --no-merges
 
+    # show the complete commit, with full details
+    showf = show --format=fuller
+
     pl = pull --rebase
     ready = rebase -i @{u}
     s = status -s
@@ -43,7 +46,7 @@
     tags = tag -l
 
     #up = "!git remote update -p; git merge --ff-only @{u}"
-    standup = log ––since yesterday ––author alister
+    # prefer from https://github.com/tj/git-extras #standup = log ––since yesterday ––author alister
 
     assume   = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
@@ -95,6 +98,7 @@
     pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [push]
     default = simple
+    autoSetupRemote = true
 [pull]
     rebase = true
 [rebase]
