@@ -38,7 +38,7 @@
     s = status -s
     st = status -sb
     unstage = reset HEAD
-    parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+    ## parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
 
     # Show verbose output about tags, branches or remotes, with summary commit
     branches = branch -a -v
@@ -112,3 +112,8 @@
     # Allow git diff to do basic rename and copy detection:
     renames = copies
     noprefix = true
+[init]
+    defaultBranch = main
+# File must exist: https://stackoverflow.com/questions/70435937/git-blame-with-optional-ignorerevsfile
+#[blame]
+#    ignoreRevsFile = .git-blame-ignore-revs
