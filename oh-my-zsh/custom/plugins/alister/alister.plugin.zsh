@@ -11,12 +11,13 @@ compdef _c c
 
 # a few aliases I like
 alias st='git status'
-alias gd='git diff'
+#alias gd='git diff'
 #alias tlog='tail -f log/development.log'
 
 # For working in Docker-compose 
-alias dcecon='docker-compose exec php bin/console '
-alias dcecom='docker-compose exec php composer '
+alias dcecon='docker compose exec php bin/console '
+alias dcecom='docker compose exec php composer '
+alias dce='docker compose exec '
 
 
 # from https://github.com/denysdovhan/dotfiles/
