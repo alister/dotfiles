@@ -64,6 +64,10 @@
     rebt   = rebase --abort
     rebs   = rebase --skip
 
+    # https://github.com/blueyed/dotfiles/commit/5c4e4be9fc6a56d1ccbc16398ac3fef007d5cc47 "add 'rl' alias for reflog with relative date"
+    #   Also see: [pretty].reflog
+    rl = reflog --pretty=reflog
+
     ## From https://wynnnetherland.com/journal/extending-the-command-line/
     # List files known to Git
     ls = ls-files
@@ -117,3 +121,9 @@
 # File must exist: https://stackoverflow.com/questions/70435937/git-blame-with-optional-ignorerevsfile
 #[blame]
 #    ignoreRevsFile = .git-blame-ignore-revs
+
+[pretty]
+    # See: https://github.com/blueyed/dotfiles/commit/5c4e4be9fc6a56d1ccbc16398ac3fef007d5cc47 and alias 'rl', above
+    # reflog, with relative date:
+    reflog = %C(auto)%h %<|(17)%gd %<|(30)%C(blue)%cr%C(reset) %s
+    ; reflog = %C(auto)%h %<|(17)%gd %C(blue)%ci%C(reset) %s
