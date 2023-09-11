@@ -22,7 +22,8 @@ alias dce='docker compose exec '
 
 # from https://github.com/denysdovhan/dotfiles/
 # https://github.com/denysdovhan/dotfiles/blob/3d860e9c59f03d408463b3fba33c73397a9037f3/zsh/aliases.zsh
-alias myip="curl -s https://4.ifcfg.me/"
+## TODO: remove - No longer working. Find an alternative?
+## alias myip="curl -s https://4.ifcfg.me/"
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
@@ -39,7 +40,11 @@ export EDITOR="joe"
 # You can add pretty colours to your ant output really easily by simply setting the following in your profile:
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
-alias phpqa='docker run --init -it --rm -v $(pwd):/project -v $(pwd)/tmp-phpqa:/tmp -w /project alisterbulman/ci-php:php7.3'
+# TODO need to update - adding some extra tools???
+#alias phpqa='docker run --init -it --rm -v $(pwd):/project -v $(pwd)/tmp-phpqa:/tmp -w /project alisterbulman/ci-php:php8.2'
+
+# https://github.com/wagoodman/dive
+alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
 
 alias -g J="| jq '.' -C | less -S"
 
@@ -47,4 +52,5 @@ alias -g J="| jq '.' -C | less -S"
 alias -g G=' | grep -iaE'
 alias -g GV=' | grep -ivaE' # negative grep
 alias -g H=' | head '
-alias -g M=' | less '
+alias -g M=' | less -S '
+# TODO add aliases for 'sort'
