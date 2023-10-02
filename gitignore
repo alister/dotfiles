@@ -32,3 +32,6 @@ phpunit.xml
 
 vendor/rector/rector/
 vendor/phpstan/
+
+
+.ignore
