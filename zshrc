@@ -34,8 +34,8 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(alister autoenv bundler capistrano command-not-found common-aliases docker gem git git-extras github rake-fast redis ruby rvm ssh-agent symfony symfony2 systemadmin tmux wd zsh-syntax-highlighting)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent id_rsa.201702 a10y_rsa
-#id_rsa2 id_github topbit.id_rsa id_rsa
+zstyle :omz:plugins:ssh-agent id_rsa.201702
+# a10y_rsa id_rsa2 id_github topbit.id_rsa id_rsa
 
 # Customize to your needs...
 export PATH="/home/alister/bin:/home/alister/.bin:vendor/bin:/home/alister/.npm-global/bin:$PATH"
@@ -56,11 +56,21 @@ source $ZSH/oh-my-zsh.sh
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
 
+# not using Ruby much, if any
 ## for Homebrew installed rbenv
 #if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 #@todo add rvm?
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-echo 'source ~/.autoenv/activate.sh'
+# problematical with .env files that usually read from a file
+# echo 'source ~/.autoenv/activate.sh'
+
+# From https://github.com/sharkdp/bat#integration-with-other-tools
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# It might also be necessary to set MANROFFOPT="-c" if you experience formatting problems.
+
+# From https://github.com/sharkdp/bat#integration-with-other-tools
+batdiff() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
