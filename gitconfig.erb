@@ -74,6 +74,11 @@
     # Get short SHA-1 for object
     hash = rev-parse --short HEAD
 
+    # See https://difftastic.wilfred.me.uk/git.html#regular-usage
+    # `git dft` is less to type than `git difftool`.
+    dft = difftool
+    dfts = difftool --staged
+
 [color]
     ui = auto
     diff = auto
@@ -111,11 +116,15 @@
     # https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67#.iloud2jeo
     enabled = true
 [diff]
+    # https://difftastic.wilfred.me.uk/git.html#regular-usage
+    tool = difftastic
+
     # Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation:
     mnemonicprefix = true
     # Allow git diff to do basic rename and copy detection:
     renames = copies
     noprefix = true
+
 [init]
     defaultBranch = main
 # File must exist: https://stackoverflow.com/questions/70435937/git-blame-with-optional-ignorerevsfile
@@ -127,3 +136,12 @@
     # reflog, with relative date:
     reflog = %C(auto)%h %<|(17)%gd %<|(30)%C(blue)%cr%C(reset) %s
     ; reflog = %C(auto)%h %<|(17)%gd %C(blue)%ci%C(reset) %s
+
+# https://difftastic.wilfred.me.uk/git.html#regular-usage
+# Se also section: [diff]
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+        difftool = true
