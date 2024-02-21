@@ -74,3 +74,14 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 }
+
+# SEE: https://gitlab.com/4U6U57/wsl-open
+          # Adding wsl-open as a browser for Bash/Zsh?? for Windows
+          if [[ $(uname -r) =~ (m|M)icrosoft ]]; then
+            if [[ -z $BROWSER ]]; then
+              export BROWSER=wsl-open
+            else
+              export BROWSER=$BROWSER:wsl-open
+            fi
+          fi
+          
