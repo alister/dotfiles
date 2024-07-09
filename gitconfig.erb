@@ -140,8 +140,10 @@
 # https://difftastic.wilfred.me.uk/git.html#regular-usage
 # Se also section: [diff]
 [difftool]
-        prompt = false
+    prompt = false
 [difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE"
+    cmd = difft "$LOCAL" "$REMOTE"
 [pager]
-        difftool = true
+    difftool = true
+[tag]
+    sort = version:refname
