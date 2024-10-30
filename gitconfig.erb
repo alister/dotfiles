@@ -8,11 +8,13 @@
     editor = <%= ENV['EDITOR'] ||= 'joe' %>
     autocrlf = input
     #filemode = false
+    attributesfile = <%= ENV['HOME'] %>/.gitattributes
 
     # Treat spaces before tabs, lines that are indented with 8 or more spaces as an error.
     # [default] trailing-space: looks for spaces at the end of a line
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
     whitespace = space-before-tab,indent-with-non-tab,trailing-space
+
 [alias]
     amend = commit --amend
     br = branch
@@ -33,7 +35,7 @@
 
     # show the complete commit, with full details
     showf = show --format=fuller
-    simple-tree = log --graph --oneline --branches --simplify-merges --simplify-by-decoration --after='2024-03-27 09:00:00'
+    simple-tree = log --graph --oneline --branches --simplify-merges --simplify-by-decoration --after='2024-05-23 15:55:00'
 
     pl = pull --rebase
     ready = rebase -i @{u}
@@ -77,9 +79,12 @@
     hash = rev-parse --short HEAD
 
     # See https://difftastic.wilfred.me.uk/git.html#regular-usage
-    # `git dft` is less to type than `git difftool`.
-    dft = difftool
-    dfts = difftool --staged
+    # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+    dlog = -c diff.external=difft log --ext-diff
+    dshow = -c diff.external=difft show --format=fuller --ext-diff
+    #ddf = -c diff.external=difft diff --format=fuller
+    dft = -c diff.external=difft diff --format=fuller
+    dfts = -c diff.external=difft diff --format=fuller --staged
 
 [color]
     ui = auto
@@ -149,3 +154,4 @@
     difftool = true
 [tag]
     sort = version:refname
+    # gpgsign = true

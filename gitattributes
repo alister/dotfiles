@@ -1,0 +1,17 @@
+# From the list of supported languages at https://git-scm.com/docs/gitattributes
+
+*.php diff=php
+*.rb diff=ruby
+*.rake diff=ruby
+*.sh diff=bash
+*.bash diff=bash
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.go diff=golang
+*.pl diff=perl
+
+
+# *.js diff=js
+#*.json diff=json
+#*.lock diff=json
