@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(alister command-not-found common-aliases docker git git-extras github ssh-agent symfony symfony2 systemadmin tmux wd zsh-syntax-highlighting)
+plugins=(alister command-not-found common-aliases docker git git-extras github ssh-agent symfony symfony2 systemadmin tmux wd)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent id_rsa.201702
 # a10y_rsa id_rsa2 id_github topbit.id_rsa id_rsa
@@ -85,3 +85,8 @@ batdiff() {
             fi
           fi
           
+#TODO : clone/install https://github.com/tj/git-extras.git in ~/Downloads/
+# source /home/alister/Downloads/git-extras/etc/git-extras-completion.zsh
+
+#TODO https://github.com/zsh-users/zsh-syntax-highlighting.git
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
